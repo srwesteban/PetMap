@@ -4,12 +4,13 @@ import { Login } from "./components/Login";
 import { Register } from "./components/Register";
 import { Home } from "./components/Home";
 import { ProtectedRoute } from "./components/ProtectedRoute";
-
 import { AuthProvider } from "./context/AuthContext";
+import pets1Image from './images/pets1.jpg'
+
 
 function App() {
   return (
-    <div className="bg-slate-300 text-black h-screen flex text-white">
+    <div className="flex text-white bg-cover bg-no-repeat bg-center h-screen" style={{ backgroundImage: `url(${pets1Image})` }}>
       <AuthProvider>
         <Routes>
           <Route path="/login" element={<Login />} />

@@ -47,7 +47,7 @@ export function Login() {
   };
 
   return (
-    
+
     <div className="w-full max-w-xs m-auto">
       {error && <Alert message={error} />}
 
@@ -110,7 +110,7 @@ export function Login() {
       >
         Usar Google
       </button>
-      <p className="my-4 text-sm flex justify-between px-3">
+      <p className="my-4 text-sm flex justify-between px-3 text-black">
         No tiene una cuenta?
         <Link to="/register" className="text-blue-700 hover:text-blue-900">
           Registarse
