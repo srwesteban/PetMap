@@ -68,7 +68,7 @@ export function Login() {
             id="email"
             onChange={handleChange}
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            placeholder="youremail@company.tld"
+            placeholder="ejemplo@correo.com"
           />
         </div>
         <div className="mb-4">

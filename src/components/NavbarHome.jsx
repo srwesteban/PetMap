@@ -23,9 +23,9 @@ export function NavbarHome() {
             <div className="text-white text-2xl font-bold">PetMap</div>
             <div className="flex items-center gap-6">
               <a href="#" className="text-white hover:underline">Inicio</a>
-              <a href="#" className="text-white hover:underline">Explorar</a>
+              <a href="#" className="text-white hover:underline">Instrucciones</a>
               <a href="#" className="text-white hover:underline">Mis Mascotas</a>
-              <a  className="text-white hover:underline">Bienvenido, {user.displayName || user.email}</a>
+              <p className="text-white">Bienvenido, {user.displayName || user.email}</p>
               <button className="bg-slate-200 hover:bg-slate-300 rounded py-2 px-2 text-black" onClick={handleLogout}>
                 Cerrar sesion
               </button>

@@ -48,7 +48,7 @@ export default function Mapa() {
 
   useEffect(() => {
     getUserLocation();
-  }, []);
+  });
 
   return (
     <div className="flex justify-center items-center w-screen m-16">
