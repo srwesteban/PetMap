@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import './Mapa.css';
 import icon from 'leaflet/dist/images/marker-icon.png';
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
 import axios from 'axios';
@@ -51,7 +50,7 @@ export default function Mapa() {
   }, []);
 
   return (
-    <div className="w-full h-screen">
+    <div className="w-full h-screen mb-20 max-h-[80vh]">
       <MapContainer
         center={userLocation || [1.2136, -77.2811]}
         zoom={14}
