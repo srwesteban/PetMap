@@ -50,7 +50,7 @@ export default function Mapa() {
   }, []);
 
   return (
-    <div className="w-full h-screen mb-20 max-h-[75vh]">
+    <div className="w-full h-screen mb-20 max-h-[76vh] z-0">
       <MapContainer
         center={userLocation || [1.2136, -77.2811]}
         zoom={14}
