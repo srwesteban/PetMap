@@ -21,7 +21,7 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className="bg-black text-white py-8 w-screen max-w-[1900px] fixed bottom-0 z-30">
+    <footer className="bg-black text-white py-6 w-screen max-w-[1900px] fixed bottom-0 z-30">
       <div className="mx-auto text-center">
         {showContent ? (
           <>
@@ -34,7 +34,7 @@ export default function Footer() {
             <input
               type="text"
               placeholder="Ingrese coordenadas"
-              className="bg-white text-black p-2 mb-1"
+              className="bg-white text-black p-1 mb-1"
             />
             {/* Otros elementos que desees mostrar */}
           </>
