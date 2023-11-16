@@ -16,11 +16,12 @@ let iconUbicacion = new L.icon({
 
 export default function Mapa() {
   const [userLocation, setUserLocation] = useState(null);
+  const punto2Location = [1.22, -77.29]; // Cambia estas coordenadas según tu necesidad
 
   // Función para obtener la ubicación del usuario
   const getUserLocation = () => {
     if ("geolocation" in navigator) {
-      navigator.geolocation.getCurrentPosition(function(position) {
+      navigator.geolocation.getCurrentPosition(function (position) {
         const { latitude, longitude } = position.coords;
         setUserLocation([latitude, longitude]);
         // Enviar las coordenadas al servidor mediante una solicitud POST
@@ -37,12 +38,12 @@ export default function Mapa() {
       lat: latitude,
       lon: longitude
     })
-    .then(response => {
-      console.log('Coordenadas enviadas al servidor con éxito');
-    })
-    .catch(error => {
-      console.error('Error al enviar coordenadas al servidor', error);
-    });
+      .then(response => {
+        console.log('Coordenadas enviadas al servidor con éxito');
+      })
+      .catch(error => {
+        console.error('Error al enviar coordenadas al servidor', error);
+      });
   };
 
   useEffect(() => {
@@ -59,6 +60,7 @@ export default function Mapa() {
         style={{ maxWidth: '100%', height: '100%' }}
       >
         <TileLayer attribution="&copy; <a href=&quot;https://www.openstreetmap.org/copyright&quot;>OpenStreetMap</a> contributors" url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+
         {userLocation && (
           <Marker position={userLocation} icon={iconUbicacion}>
             <Popup>
@@ -66,6 +68,12 @@ export default function Mapa() {
             </Popup>
           </Marker>
         )}
+
+        <Marker position={punto2Location} icon={iconUbicacion}>
+          <Popup>
+            Punto 2
+          </Popup>
+        </Marker>
       </MapContainer>
     </div>
   );
