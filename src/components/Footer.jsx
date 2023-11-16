@@ -21,7 +21,7 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className="bg-black text-white py-6 w-screen max-w-[1900px] fixed bottom-0">
+    <footer className="bg-black text-white py-10 w-screen max-w-[2200px] fixed bottom-0">
       <div className="mx-auto text-center">
         {showContent ? (
           <>
