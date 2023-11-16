@@ -11,7 +11,5 @@ export function Home() {
       <Mapa/>
       <Footer/>
     </div>
-    
-    
   );
 }
