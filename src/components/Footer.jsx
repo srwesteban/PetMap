@@ -21,25 +21,15 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className="bg-black text-white py-6 w-full fixed bottom-0 z-30">
-      <div className="mx-auto text-center">
-        {showContent ? (
-          <>
+    <>
+      {showContent && (
+        <footer className="bg-black text-white py-6 w-full fixed bottom-0 z-30">
+          <div className="mx-auto text-center">
             <p className="mb-2 text-sm sm:mb-4 sm:text-base md:mb-6 lg:mb-8 xl:mb-10">Desarrollado por William Esteban y sebas</p>
             <p className="text-sm sm:text-base mb-4">Contacto: sr.w@hotmail.com</p>
-          </>
-        ) : (
-          <>
-            {/* Aquí puedes poner el input para ingresar coordenadas */}
-            <input
-              type="text"
-              placeholder="Ingrese coordenadas"
-              className="bg-white text-black p-1 mb-1"
-            />
-            {/* Otros elementos que desees mostrar */}
-          </>
-        )}
-      </div>
-    </footer>
+          </div>
+        </footer>
+      )}
+    </>
   );
 }
