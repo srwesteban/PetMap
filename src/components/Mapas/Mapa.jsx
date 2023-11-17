@@ -68,7 +68,7 @@ export default function Mapa() {
         </MapContainer>
       </div>
 
-      <div className="h-1/5 bg-black p-4 text-white">
+      <div className="h-2/5 bg-black p-4 text-white">
         <form onSubmit={handlePunto2Submit}>
           <label className="block mb-2 text-lg">
             Ingrese las coordenadas (latitud, longitud):

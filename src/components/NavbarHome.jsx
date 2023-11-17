@@ -14,7 +14,7 @@ export function NavbarHome() {
   };
 
   return (
-    <nav className="bg-black w-screen max-w-[1900px] p-4">
+    <nav className="bg-black w-screen p-4">
       <div className="flex justify-between items-center">
         {/* Título "PetMap" solo visible en pantallas grandes (lg: large) y cuando el menú está cerrado */}
         <div className={`text-white text-xl lg:text-3xl font-bold lg:block ${isMenuOpen ? 'hidden' : 'block'}`}>PetMap</div>
