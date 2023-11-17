@@ -3,12 +3,12 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDog } from '@fortawesome/free-solid-svg-icons';
+import icon from 'leaflet/dist/images/marker-icon.png';
+
 
 // Icono de usuario
 let iconUbicacion = new L.icon({
-  iconUrl: require('leaflet/dist/images/marker-icon.png'),
+  iconUrl: icon,
   iconShadow: iconShadow,
   iconSize: [25, 41],
   iconAnchor: [12, 41],
