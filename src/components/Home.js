@@ -9,7 +9,7 @@ export function Home() {
     <div>
       <NavbarHome />
       <Mapa/>
-      {/* <Footer/> */}
+      <Footer/>
     </div>
   );
 }

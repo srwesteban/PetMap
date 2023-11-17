@@ -40,52 +40,50 @@ export default function Mapa() {
 
   return (
     <div className="relative w-full h-screen mb-10 max-h-[76vh] z-0">
-      <div className="flex h-full">
-        <div className="w-4/5">
-          <MapContainer
-            center={userLocation || [1.2136, -77.2811]}
-            zoom={14}
-            scrollWheelZoom={true}
-            id='mapa'
-            style={{ width: '100%', height: '100%' }}
-          >
-            <TileLayer attribution="&copy; <a href=&quot;https://www.openstreetmap.org/copyright&quot;>OpenStreetMap</a> contributors" url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+      <div className="h-4/5">
+        <MapContainer
+          center={userLocation || [1.2136, -77.2811]}
+          zoom={14}
+          scrollWheelZoom={true}
+          id='mapa'
+          style={{ width: '100%', height: '100%' }}
+        >
+          <TileLayer attribution="&copy; <a href=&quot;https://www.openstreetmap.org/copyright&quot;>OpenStreetMap</a> contributors" url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 
-            {userLocation && (
-              <Marker position={userLocation} icon={iconUbicacion}>
-                <Popup>
-                  Usted está aquí.
-                </Popup>
-              </Marker>
-            )}
+          {userLocation && (
+            <Marker position={userLocation} icon={iconUbicacion}>
+              <Popup>
+                Usted está aquí.
+              </Popup>
+            </Marker>
+          )}
 
-            {(!isNaN(punto2Location.lat) && !isNaN(punto2Location.lon)) && (
-              <Marker position={[punto2Location.lat, punto2Location.lon]} icon={iconUbicacion}>
-                <Popup>
-                  Punto 2
-                </Popup>
-              </Marker>
-            )}
-          </MapContainer>
-        </div>
+          {(!isNaN(punto2Location.lat) && !isNaN(punto2Location.lon)) && (
+            <Marker position={[punto2Location.lat, punto2Location.lon]} icon={iconUbicacion}>
+              <Popup>
+                Punto 2
+              </Popup>
+            </Marker>
+          )}
+        </MapContainer>
+      </div>
 
-        <div className="w-1/5 bg-black p-4 text-white">
-          <form onSubmit={handlePunto2Submit}>
-            <label className="block mb-2 text-lg">
-              Ingrese las coordenadas (latitud, longitud):
-              <input
-                type="text"
-                name="coords"
-                placeholder="Ejemplo: 1.2136,-77.2811"
-                value={inputCoords}
-                onChange={handleCoordsInputChange}
-                className="w-full p-2 border rounded"
-                required
-              />
-            </label>
-            <button type="submit" className="bg-blue-500 text-white p-2 rounded">Actualizar Punto 2</button>
-          </form>
-        </div>
+      <div className="h-1/5 bg-black p-4 text-white">
+        <form onSubmit={handlePunto2Submit}>
+          <label className="block mb-2 text-lg">
+            Ingrese las coordenadas (latitud, longitud):
+            <input
+              type="text"
+              name="coords"
+              placeholder="Ejemplo: 1.2136,-77.2811"
+              value={inputCoords}
+              onChange={handleCoordsInputChange}
+              className="w-full p-2 border rounded"
+              required
+            />
+          </label>
+          <button type="submit" className="bg-blue-500 text-white p-2 rounded">Actualizar Punto 2</button>
+        </form>
       </div>
     </div>
   );
