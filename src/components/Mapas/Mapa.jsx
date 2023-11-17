@@ -2,16 +2,26 @@ import React, { useEffect, useState } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import icon from 'leaflet/dist/images/marker-icon.png';
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
-import axios from 'axios';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDog } from '@fortawesome/free-solid-svg-icons';
 
+// Icono de usuario
 let iconUbicacion = new L.icon({
-  iconUrl: icon,
+  iconUrl: require('leaflet/dist/images/marker-icon.png'),
   iconShadow: iconShadow,
   iconSize: [25, 41],
   iconAnchor: [12, 41],
   shadowSize: [41, 41],
+});
+
+// Icono de perrito
+let iconMascota = new L.icon({
+  iconUrl: require('../../images/feliz.png'),
+
+  iconSize: [30, 30],
+  iconAnchor: [20, 20],
+
 });
 
 export default function Mapa() {
@@ -59,9 +69,9 @@ export default function Mapa() {
           )}
 
           {(!isNaN(punto2Location.lat) && !isNaN(punto2Location.lon)) && (
-            <Marker position={[punto2Location.lat, punto2Location.lon]} icon={iconUbicacion}>
+            <Marker position={[punto2Location.lat, punto2Location.lon]} icon={iconMascota}>
               <Popup>
-                Punto 2
+                Punto 2 - ¡Aquí hay un perrito!
               </Popup>
             </Marker>
           )}
@@ -82,7 +92,7 @@ export default function Mapa() {
               required
             />
           </label>
-          <button type="submit" className="bg-blue-500 text-white p-2 rounded">Actualizar Punto 2</button>
+          <button type="submit" className="bg-blue-500 text-white p-2 rounded">Buscar</button>
         </form>
       </div>
     </div>
