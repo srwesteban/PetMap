@@ -1,19 +1,8 @@
-import icon from 'leaflet/dist/images/marker-icon.png';
 import React, { useEffect, useState } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import iconShadow from 'leaflet/dist/images/marker-shadow.png';
 
-
-// Icono de usuario
-let iconUbicacion = new L.icon({
-  iconUrl: require('leaflet/dist/images/marker-icon.png'),
-  iconShadow: iconShadow,
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  shadowSize: [41, 41],
-});
 
 // Icono de perrito
 let iconMascota = new L.icon({
@@ -92,7 +81,7 @@ export default function Mapa() {
         </MapContainer>
       </div>
 
-      <div className="h-2/5 bg-black p-4 text-white">
+      <div className="h-2/5 bg-black p-4 text-white font-semibold">
         <form onSubmit={handlePunto2Submit}>
           <label className="block mb-2 text-lg">
             Ingrese las coordenadas (latitud, longitud):
@@ -102,7 +91,7 @@ export default function Mapa() {
               placeholder="Ejemplo: 1.2136,-77.2811"
               value={inputCoords}
               onChange={handleCoordsInputChange}
-              className="w-full p-2 border rounded"
+              className="w-full p-2 border rounded text-black"
               required
             />
           </label>

@@ -23,10 +23,10 @@ export default function Footer() {
   return (
     <>
       {showContent && (
-        <footer className="bg-black text-white py-6 w-full fixed bottom-0 z-30">
+        <footer className="bg-black text-white w-full fixed bottom-0">
           <div className="mx-auto text-center">
-            <p className="mb-2 text-sm sm:mb-4 sm:text-base md:mb-6 lg:mb-8 xl:mb-10">Desarrollado por William Esteban y sebas</p>
-            <p className="text-sm sm:text-base mb-4">Contacto: sr.w@hotmail.com</p>
+            <p className="mb-2 text-sm sm:mb-2 sm:text-base md:mb-2 lg:mb-2 xl:mb-2">Desarrollado por William David Esteban Mora y Sebas</p>
+            <p className="text-sm sm:text-base mb-2">Contacto: sr.w@hotmail.com</p>
           </div>
         </footer>
       )}
