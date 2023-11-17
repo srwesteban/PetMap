@@ -22,6 +22,12 @@ let iconMascota = new L.icon({
   iconAnchor: [12, 41],
 });
 
+let iconPersona = new L.icon({
+  iconUrl: require('../../images/persona.png'),
+  iconSize: [30, 30],
+  iconAnchor: [12, 41],
+});
+
 export default function Mapa() {
   const [userLocation, setUserLocation] = useState(null);
   const [punto2Location, setPunto2Location] = useState({ lat: 1.22, lon: -77.29 });
@@ -69,7 +75,7 @@ export default function Mapa() {
           <TileLayer attribution="&copy; <a href=&quot;https://www.openstreetmap.org/copyright&quot;>OpenStreetMap</a> contributors" url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 
           {userLocation && (
-            <Marker position={userLocation} icon={iconUbicacion}>
+            <Marker position={userLocation} icon={iconPersona}>
               <Popup>
                 Usted está aquí.
               </Popup>
@@ -79,7 +85,7 @@ export default function Mapa() {
           {(!isNaN(punto2Location.lat) && !isNaN(punto2Location.lon)) && (
             <Marker position={[punto2Location.lat, punto2Location.lon]} icon={iconMascota}>
               <Popup>
-                Punto 2 - ¡Aquí hay un perrito!
+                Mascota
               </Popup>
             </Marker>
           )}
