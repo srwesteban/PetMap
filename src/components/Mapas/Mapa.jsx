@@ -17,7 +17,7 @@ let iconUbicacion = new L.icon({
 
 // Icono de perrito
 let iconMascota = new L.icon({
-  iconUrl: require('../../images/perro.png'),
+  iconUrl: require('../../images/feliz.png'),
   iconSize: [30, 30],
   iconAnchor: [12, 41],
 });
