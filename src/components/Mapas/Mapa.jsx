@@ -39,7 +39,7 @@ export default function Mapa() {
   };
 
   return (
-    <div className="relative w-full h-screen mb-10 max-h-[76vh] z-0">
+    <div className="relative w-full h-screen mb-10 max-h-[80vh] z-0">
       <div className="h-4/5">
         <MapContainer
           center={userLocation || [1.2136, -77.2811]}
