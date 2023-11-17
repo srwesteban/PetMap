@@ -39,13 +39,13 @@ export default function Mapa() {
   };
 
   return (
-    <div className="relative w-full h-screen mb-10 max-h-[76vh] z-0">
+    <div className="relative w-full h-screen max-h-[92vh]">
       <MapContainer
         center={userLocation || [1.2136, -77.2811]}
         zoom={14}
         scrollWheelZoom={true}
         id='mapa'
-        style={{ width: '100%', height: '60vh' }}
+        style={{ width: '100%', height: '76vh' }}
       >
         <TileLayer attribution="&copy; <a href=&quot;https://www.openstreetmap.org/copyright&quot;>OpenStreetMap</a> contributors" url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 
