@@ -1,14 +1,14 @@
+import icon from 'leaflet/dist/images/marker-icon.png';
 import React, { useEffect, useState } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
-import icon from 'leaflet/dist/images/marker-icon.png';
 
 
 // Icono de usuario
 let iconUbicacion = new L.icon({
-  iconUrl: icon,
+  iconUrl: require('leaflet/dist/images/marker-icon.png'),
   iconShadow: iconShadow,
   iconSize: [25, 41],
   iconAnchor: [12, 41],
@@ -17,11 +17,9 @@ let iconUbicacion = new L.icon({
 
 // Icono de perrito
 let iconMascota = new L.icon({
-  iconUrl: require('../../images/feliz.png'),
-
+  iconUrl: require('../../images/perro.png'),
   iconSize: [30, 30],
-  iconAnchor: [20, 20],
-
+  iconAnchor: [12, 41],
 });
 
 export default function Mapa() {
@@ -47,6 +45,16 @@ export default function Mapa() {
       console.error('Coordenadas no válidas. Por favor, ingrese números válidos.');
     }
   };
+
+  // Obtener la ubicación del usuario
+  useEffect(() => {
+    if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition(function (position) {
+        const { latitude, longitude } = position.coords;
+        setUserLocation([latitude, longitude]);
+      });
+    }
+  }, []);
 
   return (
     <div className="relative w-full h-screen mb-10 max-h-[80vh] z-0">
