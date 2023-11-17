@@ -3,7 +3,6 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
-
 // Icono de perrito
 let iconMascota = new L.icon({
   iconUrl: require('../../images/feliz.png'),
@@ -41,15 +40,23 @@ export default function Mapa() {
     }
   };
 
-  // Obtener la ubicación del usuario
+  // Obtener y actualizar la ubicación del usuario
   useEffect(() => {
-    if ("geolocation" in navigator) {
-      navigator.geolocation.getCurrentPosition(function (position) {
+    const watchId = navigator.geolocation.watchPosition(
+      function (position) {
         const { latitude, longitude } = position.coords;
         setUserLocation([latitude, longitude]);
-      });
-    }
-  }, []);
+      },
+      function (error) {
+        console.error('Error al obtener la ubicación del usuario:', error);
+      }
+    );
+
+    // Devolver una función de limpieza para detener el seguimiento cuando el componente se desmonta
+    return () => {
+      navigator.geolocation.clearWatch(watchId);
+    };
+  }, []); // La dependencia vacía asegura que este efecto solo se ejecute una vez
 
   return (
     <div className="relative w-full h-screen mb-10 max-h-[80vh] z-0">

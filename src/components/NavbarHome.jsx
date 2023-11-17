@@ -41,7 +41,7 @@ export function NavbarHome() {
         <p className="text-white mx-4">Bienvenido, {user.displayName || user.email}</p>
         <div className="text-center">
           <button
-            className="bg-slate-200 hover:bg-slate-300 rounded py-1 px-2 text-black"
+            className="bg-slate-200 hover:bg-slate-300 rounded py-1 px-2 mr-6 text-black"
             onClick={handleLogout}
           >
             Cerrar sesión
