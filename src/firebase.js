@@ -36,5 +36,6 @@ export const FacebookAuth = async () => {
   }
 };
 
+
 // Exporta la instancia de la aplicación y la instancia de autenticación si es necesario
 export { firebaseApp, auth };

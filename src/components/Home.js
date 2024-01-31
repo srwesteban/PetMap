@@ -1,6 +1,6 @@
-import NavbarHome from './NavbarHome';
-import Mapa from './Mapas/Mapa';
-import Footer from './Footer';
+import NavbarHome from './views/NavbarHome.jsx';
+import Mapa from './views/Mapa.jsx';
+import Footer from './/views/Footer.jsx';
 
 
 export function Home() {

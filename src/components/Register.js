@@ -1,13 +1,15 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { Alert } from "./Alert";
+
 export function Register() {
   const { signup } = useAuth();
 
   const [user, setUser] = useState({
     email: "",
     password: "",
+    username: "", // Nuevo campo para el nombre de usuario
   });
 
   const [error, setError] = useState("");
@@ -49,6 +51,21 @@ export function Register() {
 
         <div className="mb-4">
           <label
+            htmlFor="username" // Nueva etiqueta para el nombre de usuario
+            className="block text-gray-700 text-sm font-bold mb-2"
+          >
+            Nombre de Usuario
+          </label>
+          <input
+            type="text"
+            onChange={(e) => setUser({ ...user, username: e.target.value })}
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            placeholder="Nombre de usuario"
+          />
+        </div>
+
+        <div className="mb-4">
+          <label
             htmlFor="password"
             className="block text-gray-700 text-sm font-bold mb-2"
           >
@@ -66,12 +83,6 @@ export function Register() {
           Registrar
         </button>
       </form>
-      <p className="my-4 text-sm flex justify-between px-3">
-         No tienes una cuenta?
-        <Link to="/login" className="text-blue-700 hover:text-blue-900">
-          Login
-        </Link>
-      </p>
     </div>
   );
 }
