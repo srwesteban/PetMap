@@ -116,10 +116,7 @@ export function Login() {
       >
         Usar Google
       </button>
-      <div className="fw-bold text-center rounded">
-        <div className="py-3 rounded" onClick={FaceboookAuthButtonClicked}>Facebook
-          </div>
-      </div>
+      
       <p className="my-4 text-sm flex justify-between px-3 text-black bg-white font-semibold">
         No tiene una cuenta?
         <Link to="/register" className="text-blue-700 hover:text-blue-900">
